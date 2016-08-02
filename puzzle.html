@@ -11,24 +11,27 @@
 		function AskQuestion(textBoxId, answer)
 		{
 			var userAnswer = document.getElementById(textBoxId).value;
-			if(userAnswer == answer)
+			if(userAnswer.toLowerCase() == answer)
 				result++;
 
 		}
 
 		function AskQuestions()
 		{
-			AskQuestion("userAnswer1", "капуста");
+			AskQuestion("userAnswer1", "лампочка");
 			AskQuestion("userAnswer2", "елка");
-		
+			AskQuestion("userAnswer3", "хрен");
 
-			if(result == 2)
+
+			if(result == 3)
 				alert('Вы угадали все загадки')	;
+			else if(result == 2)
+				alert('Вы не угадали только одну загадку')	;
 			else if(result == 1)
 				alert('Вы угадали только одну загадку')	;
-			else 
+			else
 				alert('Вы ничего не угадали');
-		}		
+		}
 
 		/*function AskQuestions()
 		{
@@ -40,13 +43,13 @@
 			userAnswer = document.getElementById("userAnswer2").value;
 			if(userAnswer == "елка")
 				result++;
-			
+
 
 			if(result == 2)
 				alert('Вы угадали все загадки')	;
 			else if(result == 1)
 				alert('Вы угадали только одну загадку')	;
-			else 
+			else
 				alert('Вы ничего не угадали');
 		}*/
 
@@ -61,15 +64,18 @@
 	</div>
 <div id="content">
 	<h1>Личный сайт студента GeekBrains</h1>
-    <div id="center">	
-		<h3>Игра в загадки</h3>			
+    <div id="center">
+		<h3>Игра в загадки</h3>
 	    <div id="box">
 	    	<h5>Отгадай загадки!</h5>
-	    	<p>Сто одежек, и все без застежек</p>
+	    	<p>Висит груша, нельзя скушать</p>
 	    	<input type="text" id="userAnswer1">
 
             <p>Зимой и летом одним цветом</p>
             <input type="text" id="userAnswer2">
+
+								<p>Какое растение все знает?</p>
+								<input type="text" id="userAnswer3">
 
             <br><br/>
             <a href="#" onclick="AskQuestions();">Отправить</a>
